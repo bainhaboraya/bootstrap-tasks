@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         *{
+            padding:0;
+            margin:0;
+            box-sizing:border-box;
+        }
+        #mainwrapper{
+            width:80vw;
+            margin:10px auto;
+            border:1px solid black;
+            padding:2px;
+            height:90vh;
+            display:flex;
+        }
+        video{
+            transition: transform 3s;
+        }
+        video:hover{
+            transform: scale(1.5);
+        }
+        .list{
+            display: flex;
+            flex-direction: column;
+            width: 30%;
+            border: 2px solid black;
+            border-radius: 20px;
+            margin: 10px 0;
+            margin-right:20px ;
+        }
+        .list input{
+            width: 50%;
+            padding: 10px;
+            margin: 10px auto;
+            border: 2px solid blue;
+            border-radius: 5px;
+        }
+        input:hover{
+            animation: rotatebutton;
+            animation-duration: 4s;
+        }
+        @keyframes rotatebutton{
+            from{
+                transform: rotate(0);
+            }
+            from{
+                transform: rotate(360deg);
+            }
+        }
+        ::-webkit-media-controls {
+            display:none !important;
+}
+    </style>
+</head>
+<body>
+    <section id="mainwrapper">
+        <div class="list">
+            <input type="button" value="video1" id="1">
+            <input type="button" value="video2" id="2">
+            <input type="button" value="video3" id="3">
+            <input type="button" value="video4" id="4">
+            <input type="button" value="video5" id="5">
+            <input type="button" value="video6" id="6">
+            <input type="button" value="video7" id="7">
+            <input type="button" value="video8" id="8">
+        </div>
+        <section id="videowrapper">
+            <video src="first.mp4" id="myvideo"  width="400" height="400"  >
+        </section>
+    </section>
+    <script>
+        let video=document.getElementById("myvideo");
+        let allbutton=document.querySelectorAll("input[type='button']");
+        let list=document.getElementsByClassName("list")[0];
+        let video_arr=["first.mp4","second.mp4","third.mp4","four.mp4","first.mp4","second.mp4","third.mp4","four.mp4"]
+        list.addEventListener("click",function(e){
+            if(e.target.type=="button"){
+                let currentbutton=parseInt(e.target.id)-1
+                video.src=video_arr[currentbutton]
+                console.log(video.src)
+
+            }
+        });
+        video.addEventListener("click",function(){
+            if (video.paused) {
+                video.play();
+            } else {
+                video.pause(); 
+            }
+        })
+        video.addEventListener("dblclick",function(){
+            video.requestFullscreen();
+            
+        }
+        )
+    </script>
+</body>
+</html>

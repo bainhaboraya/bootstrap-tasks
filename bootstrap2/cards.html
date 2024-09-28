@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Dropdown Menu</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="mainContainer my-5">
+        <div class="row">
+            <div id="productsrapper" class="row"></div>
+        </div>
+    </div>
+
+    <script>
+        const products = [
+            { name: "camera high end", image: "images/product1.jpg", price: 2000, stock: 45 },
+            { name: "mostirizing cream", image: "images/product2.jpg", price: 10, stock: 100 },
+            { name: "cosmatic prouducts", image: "images/product3.jpg", price: 70, stock: 120 }
+        ];
+
+        function createProductCard(product) {
+            const cardDiv = document.createElement("div");
+            cardDiv.classList.add("col-4");
+
+            const card = document.createElement("div");
+            card.classList.add("card");
+
+            const image = document.createElement("img");
+            image.src = product.image;
+            image.classList.add("card-img-top");
+            image.alt = product.name;
+
+            const cardBody = document.createElement("div");
+            cardBody.classList.add("card-body");
+
+            const title = document.createElement("h5");
+            title.classList.add("card-title");
+            title.textContent = product.name;
+
+            const price = document.createElement("p");
+            price.classList.add("card-text");
+            price.textContent = `Price: $${product.price}`;
+
+            const stock = document.createElement("p");
+            stock.classList.add("card-text");
+            stock.textContent = `Stock: ${product.stock}`;
+
+            // Append elements to their respective parents
+            cardBody.appendChild(title);
+            cardBody.appendChild(price);
+            cardBody.appendChild(stock);
+
+            card.appendChild(image);
+            card.appendChild(cardBody);
+
+            cardDiv.appendChild(card);
+
+            return cardDiv;
+        }
+
+        function displayProducts() {
+            const productsrapper = document.getElementById("productsrapper");
+            productsrapper.innerHTML = "";
+            products.forEach(product => {
+                const card = createProductCard(product);
+                productsrapper.appendChild(card);
+            });
+        }
+
+        displayProducts();
+    </script>
+</body>
+</html>

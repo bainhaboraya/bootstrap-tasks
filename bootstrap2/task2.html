@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <link href="css/bootstrap.css" rel="stylesheet" />
+    <link href="css/font-awesome.css" rel="stylesheet" />
+    <style>
+        body {
+            padding-top: 10px;
+        }
+        .form-floating {
+      margin-bottom: 1rem;
+      position: relative;
+    }
+
+    .form-floating label {
+      position: absolute;
+      top: 0;
+      left: 0;
+      transition: top 0.2s, font-size 0.2s;
+      pointer-events: none;
+    }
+
+    .form-floating input:focus + label,
+    .form-floating input:not(:placeholder-shown) + label {
+      top: -0.5rem;
+      font-size: 0.8em;
+    }
+
+    .form-control {
+      padding-top: 1.5rem; 
+    }
+
+    .invalid-feedback {
+      display: none;
+    }
+
+    .form-control:invalid + .invalid-feedback {
+      display: block;
+    }
+    label{
+        padding:5px;
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form id="loginForm" class="needs-validation" novalidate>
+            <div class="form-floating">
+                <input type="text" id="floatingInputInvalid" placeholder=" " class="form-control" required>
+                <label for="floatingInputInvalid">Username</label>
+                <div class="invalid-feedback">Please enter a username.</div>
+              </div>
+            <!-- <form class="form-floating">
+                <input type="email" class="form-control is-invalid" id="floatingInputInvalid" placeholder="name@example.com" value="test@example.com">
+                <label for="floatingInputInvalid">Invalid input</label>
+              </form> -->
+            <div class="form-group">
+                <label for="userpass">Password</label>
+                <input type="password" id="userpass" class="form-control" required>
+                <div class="invalid-feedback">Please enter a password.</div>
+            </div>
+            <div class="form-floating">
+
+            <div class="input-group mt-2">
+                <span class="fa fa-user input-group-prepend input-group-text"></span>
+                <input type="text" class="form-control" required>
+                <div class="invalid-feedback">Please enter your username.</div>
+            </div>
+
+            <div class="input-group mt-2">
+                <span class="fa fa-lock input-group-prepend input-group-text"></span>
+                <input type="password" class="form-control" required>
+                <div class="invalid-feedback">Please enter your password.</div>
+            </div>
+
+            <button type="submit" class="btn btn-primary mt-3">Submit</button>
+        </form>
+    </div>
+
+    <script src="js/JQuery-3.3.1.min.js"></script>
+    <script src="js/popper.js"></script>
+    <script src="js/bootstrap.js"></script>
+
+    <script>
+        // Bootstrap form validation
+        (function () {
+            'use strict';
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            var forms = document.querySelectorAll('.needs-validation');
+            // Loop over them and prevent submission
+            Array.prototype.slice.call(forms)
+                .forEach(function (form) {
+                    form.addEventListener('submit', function (event) {
+                        if (!form.checkValidity()) {
+                            event.preventDefault();
+                            event.stopPropagation();
+                        }
+                        form.classList.add('was-validated');
+                    }, false);
+                });
+        })();
+    </script>
+</body>
+</html>

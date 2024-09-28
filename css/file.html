@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0px;
+        }
+        body{
+            background-image: url(1.jpg);
+        }
+        table{
+            background-color: rgb(200, 199, 199);
+            margin:  auto;
+            margin-top: 120px;
+            padding:20px;
+            width: 400px;
+            height: 400px;
+            text-align: center;
+            border-radius: 10%;
+        }
+       
+      input[type="text"] {
+          background-color: rgb(200, 199, 199);
+          border: 0;
+          outline: 0;
+          border-bottom:3px solid black;
+          width:250px;
+      }
+      input[type="password"] {
+          background-color: rgb(200, 199, 199);
+          border: 0;
+          outline: 0;
+          border-bottom: 3px solid black;
+          width: 250px;
+      }
+      input[type="submit"]{
+        background-color: rgb(243, 137, 243);
+        border: none;
+        width: 60px;
+        height: 30px;
+        border-radius: 10%;
+      }
+
+          input[type="password"]:focus, input[type="text"]:focus {
+              border-bottom: 2px solid rgb(86, 107, 243);
+          }
+          input[type="submit"]:hover{
+        cursor: pointer;
+      }
+          
+        
+        
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <td><img src="pass.png"/></td>
+        </tr>
+        <tr>
+            <td><input type="text" placeholder="please enter your name"/></td>
+        </tr>
+        <tr>
+            <td><img src="passs.png"/></td>
+        </tr>
+        <tr>
+            <td><input type="password" placeholder="please enter your password"/></td>
+        </tr>
+        <tr>
+            <td><input type="submit" value="Log In"/></td>
+        </tr>
+        <tr>
+            <td><a href="signup.html">sign up</a></td>
+        </tr>
+    </table>
+    
+</body>
+</html>

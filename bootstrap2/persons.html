@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Accordion</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .accordion-item {
+            margin-bottom: 20px;
+        }
+
+        .accordion-header {
+            background-color:rgb(244, 39, 73);
+            padding: 15px;
+            cursor: pointer;
+            color: #fff;
+        }
+
+        .accordion-body {
+            background-color: #fff;
+            padding: 15px;
+            display: none;
+        }
+
+        .accordion-body img {
+            width: 100%;
+        }
+
+       
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="customAccordion">
+            <div class="accordion-item">
+                <div class="accordion-header" onclick="toggleAccordion(0)">
+                    Mohamed alaa - backend developer
+                </div>
+                <div class="accordion-body">
+                    <div class="row align-items-center">
+                        <div class="col-md-3">
+                            <img src="images/person1.jpg" class="img-fluid" alt="Mohamed alaa">
+                        </div>
+                        <div class="col-md-9">
+                            <p><strong>Name:</strong> Mohamed alaa</p>
+                            <p><strong>Position:</strong> backend developer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <div class="accordion-header" onclick="toggleAccordion(1)">
+                    Bainh alaa - Developer
+                </div>
+                <div class="accordion-body">
+                    <div class="row align-items-center">
+                        <div class="col-md-3">
+                            <img src="images/person2.jpg" class="img-fluid" alt="bainh alaa">
+                        </div>
+                        <div class="col-md-9">
+                            <p><strong>Name:</strong>Bainh alaa </p>
+                            <p><strong>Position:</strong> Developer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <div class="accordion-header" onclick="toggleAccordion(2)">
+                    Esraa alaa - frontend devloper
+                </div>
+                <div class="accordion-body">
+                    <div class="row align-items-center">
+                        <div class="col-md-3">
+                            <img src="images/person3.jpg" class="img-fluid" alt="Esraa alaa">
+                        </div>
+                        <div class="col-md-9">
+                            <p><strong>Name:</strong> Esraa alaa</p>
+                            <p><strong>Position:</strong>frontend devloper </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleAccordion(index) {
+  const accordionItems = document.getElementsByClassName('accordion-item');
+  const accordionBody = accordionItems[index].querySelector('.accordion-body');
+
+  for (let i = 0; i < accordionItems.length; i++) {
+    const item = accordionItems[i];
+    const body = item.querySelector('.accordion-body');
+
+    if (i === index) {
+      if (body.style.display === 'block') {
+        body.style.display = 'none';
+      } else {
+        body.style.display = 'block';
+      }
+    } else {
+      body.style.display = 'none';
+    }
+  }
+}
+    </script>
+</body>
+</html>

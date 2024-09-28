@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protofoilo</title>
+    <!-- Link Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Font Awesome CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inria+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        
+        
+        .intro {
+            background-image: url(img/laptop_top.jpg);
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            color: white;
+        }
+
+        i {
+            color: white;
+            display: inline-block;
+            font-size: 20px;
+            text-align: center;
+            border: 2px solid white;
+            border-radius: 50%;
+            margin: 3px 5px;
+            padding: 3px;
+            cursor: pointer;
+        }
+
+        i:hover {
+            color: rgb(255, 255, 255);
+            background-color: white;
+        }
+        .img-container {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .img-container img {
+            width: 100%;
+            transition: transform 0.3s;
+        }
+
+        .icons {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(28, 27, 27, 0.5);
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            padding: 10px 0;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .icons i {
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+        }
+        .footer-right i:hover{
+            color:red;
+        }
+
+        .img-container:hover .icons {
+            opacity: 1;
+        }
+
+        .img-container:hover img {
+            transform: translateY(-20px);
+        }   
+       
+
+
+
+.gallery .card-img-top{
+    opacity: .3;
+}
+.gallery .card p {
+            color: black;
+            text-align: center;
+            opacity: 0;
+        }
+.card:hover p  {
+opacity: 1;
+}
+     
+     
+
+  
+        
+        
+    </style>
+</head>
+<body>
+    <div class="container-fluid intro d-flex justify-content-center align-items-center">
+        <div class="text-center">
+            <h2>ITI MANSOURA</h2>
+            <p class="my-4">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laboriosam beatae tempora git earum e
+                amet, fugit earum excepturi nulla nihil a placeat temp unt amet officia, beatae tempora git earum e
+                oribus accusamus? Neque odit consectetur quod deserunt amet officia, beatae tempora git earum e
+                xcepturi nulla nihil a placeat temp ctetur quod deserunt amet officia, beatae temporaunde distinctio!
+                oribus accusamus? Neque odit consectetur quod deserunt amet officia, beatae temporaunde distinctio!</p>
+            <button class="btn btn-lg btn-danger">Register Now</button>
+        </div>
+    </div>
+
+    <section class="container-fluid activities">
+        <h3 class="title text-center mt-5">Activities</h3>
+        <div class="row justify-content-center">
+          <div class="col-md-4 mb-4">
+            <div class="card position-relative">
+                <div class="img-container">
+                    <img src="img/p4.jpg" class="card-img-top">
+                    <div class="icons position">
+                        <i class="fab fa-facebook-f"></i>
+                        <i class="fab fa-twitter"></i>
+                        <i class="fab fa-instagram"></i>
+                        <i class="fab fa-youtube"></i>
+                    </div>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, eligendi? Aut facilis vero veniam culpa, animi dignissimos assumenda quod corporis natus odit, eligendi explicabo sequi impedit asperiores amet, omnis pariatur.rporis natus odit, eligendi explicabo sequi impedit asperiores amet</p>
+                    </div>
+                </div>
+                
+
+                
+            </div>
+            
+       
+
+        <div class="col-md-4 mb-4">
+            <div class="imgicon">
+                <div class="card position-relative">
+                   
+                <div class="img-container">
+                    <img src="img/p6.jpg" class="card-img-top">
+                    <div class="icons">
+                        <i class="fab fa-facebook-f"></i>
+                        <i class="fab fa-twitter"></i>
+                        <i class="fab fa-instagram"></i>
+                        <i class="fab fa-youtube"></i>
+                    </div>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, eligendi? Aut facilis vero veniam culpa, animi dignissimos assumenda quod corporis natus odit, eligendi explicabo sequi impedit asperiores amet, omnis pariatur.rporis natus odit, eligendi explicabo sequi impedit asperiores amet</p>
+                    </div>
+                    </div>
+                </div>
+
+                
+          
+
+        </div>
+
+     <div class="col-md-4 mb-4">
+            <div class="imgicon">
+                <div class="card position-relative">
+                    <div class="img-container">
+                    <img src="img/p4.jpg" class="card-img-top">
+                    <div class="icons">
+                        <i class="fab fa-facebook-f"></i>
+                        <i class="fab fa-twitter"></i>
+                        <i class="fab fa-instagram"></i>
+                        <i class="fab fa-youtube"></i>
+                    </div>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, eligendi? Aut facilis vero veniam culpa, animi dignissimos assumenda quod corporis natus odit, eligendi explicabo sequi impedit asperiores amet, omnis pariatur.rporis natus odit, eligendi explicabo sequi impedit asperiores amet.</p>
+                    </div>
+                    </div>
+                </div>
+
+                
+           
+</div>
+        </section>
+    </section>
+    
+
+    <section class="container-fluid gallery">
+      
+        <div class="row justify-content-center">
+            <div class="col-md-3 mb-4">
+                <div class="card">
+                    <img src="img/p4.jpg" class="card-img-top">
+                    <div class="card-body">
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, eligendi? Aut facilis vero veniam culpa, animi dignissimos assumenda quod corporis natus odit, eligendi explicabo sequi impedit asperiores amet, omnis pariatur.rporis natus odit, eligendi explicabo sequi impedit asperiores amet</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 mb-4">
+                <div class="card">
+                    <img src="img/p4.jpg" class="card-img-top" >
+                    <div class="card-body">
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, eligendi? Aut facilis vero veniam culpa, animi dignissimos assumenda quod corporis natus odit, eligendi explicabo sequi impedit asperiores amet, omnis pariatur.rporis natus odit, eligendi explicabo sequi impedit asperiores amet</p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-md-3 mb-4">
+                <div class="card">
+                    <img src="img/p5.jpg" class="card-img-top" >
+                    <div class="card-body">
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, eligendi? Aut facilis vero veniam culpa, animi dignissimos assumenda quod corporis natus odit, eligendi explicabo sequi impedit asperiores amet, omnis pariatur.rporis natus odit, eligendi explicabo sequi impedit asperiores amet.</p>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="col-md-3 mb-4">
+                <div class="card">
+                    <img src="img/p5.jpg" class="card-img-top" >
+                    <div class="card-body">
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, eligendi? Aut facilis vero veniam culpa, animi dignissimos assumenda quod corporis natus odit, eligendi explicabo sequi impedit asperiores amet, omnis pariatur.rporis natus odit, eligendi explicabo sequi impedit asperiores amet</p>
+                    </div>
+                </div>
+            </div>
+          
+        </div>
+    </section>
+    <footer class="container-fluid bg-dark text-light">
+        <div class="row"> 
+            <div class="col-6">
+                <h1>CONTACT US</h1>
+                <ul class="list-unstyled mx-4 footer-right">                      
+                    <li class="my-2"><i class="fas fa-map-marker-alt p-2"></i> 28 km by cairo / alexandria road, 6 octorber, b148, egypt</li>
+                    <li class="my-2"><i class="fas fa-phone p-2"></i> (+202)353-55656</li>
+                    <li class="my-2"><i class="fas fa-envelope p-2"></i> ITIinfro@itigov.eg</li>
+                </ul>
+            </div>
+            <div class="col-6 ">
+                <h1>FOLLOW US</h1>
+                <ul class="list-inline footer-left">
+                    <li class="list-inline-item"><a href="#"><i class="fab fa-facebook p-2 text-danger rounded-5"></i></a></li>
+                    <li class="list-inline-item"><a href="#"><i class="fab fa-twitter p-2 text-danger rounded-5"></i></a></li>
+                    <li class="list-inline-item"><a href="#"><i class="fab fa-youtube p-2 text-danger rounded-5"></i></a></li>
+                </ul>
+            </div>
+        </div>
+</footer>
+
+    
+</body>
+</html>

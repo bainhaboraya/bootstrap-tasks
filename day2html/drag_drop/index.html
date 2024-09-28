@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drag and Drop</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <section class="draggable">
+            <img src="images/1.jpg" data-index="1">
+            <img src="images/2.jpg" data-index="1">
+            <img src="images/4.jpg" data-index="1">
+            <img src="images/5.jpg" data-index="1">
+            <img src="images/p3.jpg" data-index="1">
+            <img src="images/p5.jpg" data-index="1">
+        </section>
+        <section class="droppable">
+        </section>
+    </div>
+    <script>
+        let allimgs=document.getElementsByTagName("img")
+        let up=document.getElementsByClassName("draggable")[0]
+        let down=document.getElementsByClassName("droppable")[0]
+        function isempty(){
+            if(up.children.length==0){
+                up.innerHTML="is empty"
+            }
+        }
+        for(let i=0;i<allimgs.length;i++){
+            allimgs[i].addEventListener("dragstart",startdrag)
+            allimgs[i].addEventListener("dragend",enddrag)  
+        }
+        down.addEventListener("drop",dropped)
+        down.addEventListener("dragenter",enterdrag)
+        down.addEventListener("dragover",overdrag)
+        up.addEventListener("dragleave",leavedrag)
+        let dataIndexValue=0
+        function startdrag(e) {
+            e.dataTransfer.setData("myimg", e.target.outerHTML);    // => a copy of target element in memory(dictionary)
+            e.target.getAttribute('data-index'); 
+          //  e.target.classList.add("start");
+            
+        }
+        function enddrag(e) {
+            e.preventDefault();
+            let dataIndexValue = e.target.getAttribute('data-index');
+            console.log(dataIndexValue)
+            dataIndexValue--;
+            e.target.setAttribute("data-index",dataIndexValue)
+            console.log(dataIndexValue)
+            if(dataIndexValue==0)
+          //  { e.target.style.display = "none";}
+            {up.removeChild(e.target)}
+            isempty()
+        }
+        function dropped(e) {
+            e.preventDefault();
+            down.innerHTML+= e.dataTransfer.getData("myimg");
+        }
+        function overdrag(e) {
+            e.preventDefault();
+        }
+        function leavedrag(e) {
+            e.preventDefault();
+        }
+        function enterdrag(e) {
+            e.preventDefault();
+            down.style.backgroundImage = 'radial-gradient(circle, lightgreen, white)';
+        }
+        
+    </script>
+</body>
+</html>

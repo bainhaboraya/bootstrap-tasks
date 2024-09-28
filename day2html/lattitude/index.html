@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyB90FxtYG_ybAYXGkz0ybkmkboE2nEbezI"></script>
+    <script>
+       
+    </script>
+</head>
+<body>
+   
+   
+        <section class="map-container">
+            <section class="map-controls">
+                <input type="button" value="Display Map" />
+                <input type="button" value="Detailed Information">
+            </section>
+            <div id="mymap">
+            </div>
+           
+        </section>
+<script>
+    
+        let mymap = document.getElementById('mymap');
+        let display = document.querySelector("input[value='Display Map']")
+        let showInfo = document.querySelector("input[value='Detailed Information']")
+        var loc = { lat: 0, long: 0, acc: 0, tim: 0 }
+        display.addEventListener("click", getLocationData)
+        function getLocationData() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(getPosition, errorHandler);
+            } else {
+                mymap.innerText = "Sorry, update your browser and try again!";
+            }
+        }
+        function getPosition(e) {
+            console.log(e);
+            var lat = e.coords.latitude;
+            var lon = e.coords.longitude;
+            let accuracy = e.coords.accuracy
+            let time = e.timestamp
+            time = new Date(time)
+            console.log(accuracy + " " + time)
+            loc.lat = lat;
+            loc.long = lon
+            loc.acc = accuracy
+            loc.tim = time
+            var location = new google.maps.LatLng(lat, lon);
+            var specs = { zoom: 17, center: location };
+            var map = new google.maps.Map(mymap, specs);
+        }
+        function errorHandler(e) {
+            alert('Error');
+        }
+        showInfo.addEventListener("click", showInformation)
+        function showInformation() {
+            mymap.innerHTML = ""
+            let createLat = document.createElement("div")
+            createLat.classList.add("info")
+            createLat.innerHTML = "Latitude (degree): " + loc.lat
+            mymap.appendChild(createLat)
+
+            let createLong = document.createElement("div")
+            createLong.classList.add("info")
+            createLong.innerHTML = "Longitude (degree): " + loc.long
+            mymap.appendChild(createLong)
+
+            let createAcc = document.createElement("div")
+            createAcc.classList.add("info")
+            createAcc.innerHTML = "Accuracy: " + loc.acc
+            mymap.appendChild(createAcc)
+
+            let createTime = document.createElement("div")
+            createTime.classList.add("info")
+            createTime.innerHTML = "Time is: " + loc.tim
+            mymap.appendChild(createTime)
+            
+        }
+</script>
+</body>
+</html>

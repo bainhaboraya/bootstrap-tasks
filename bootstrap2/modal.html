@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modal </title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container my-4 py-4">
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Add newcommer
+        </button>
+
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Enter Information</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="userInfoForm">
+                            <div class="mb-3">
+                                <label for="nameInput" class="form-label">Name</label>
+                                <input type="text" class="form-control" id="nameInput" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="passInput" class="form-label">password</label>
+                                <input type="password" class="form-control" id="passInput" required>
+                            </div>
+                            <div class="d-flex justify-content-end">
+                                <button type="button" class="btn btn-secondary me-2" data-bs-dismiss="modal">exit</button>
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container mt-4" id="secondContainer">
+
+        </div>
+    </div>
+
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        function createCard(name, password) {
+            const cardContainer = document.getElementById("secondContainer");
+
+            const cardDiv = document.createElement("div");
+            cardDiv.classList.add("card");
+
+            const cardBodyDiv = document.createElement("div");
+            cardBodyDiv.classList.add("card-body");
+
+            const title = document.createElement("h5");
+            title.classList.add("card-title");
+            title.textContent = name;
+
+            const passwordPara = document.createElement("p");
+            passwordPara.classList.add("card-text");
+            passwordPara.textContent = `Password: ${password}`;
+
+            // Append elements to their respective parents
+            cardBodyDiv.appendChild(title);
+            cardBodyDiv.appendChild(passwordPara);
+
+            cardDiv.appendChild(cardBodyDiv);
+
+            cardContainer.appendChild(cardDiv);
+        }
+
+        const modal = new bootstrap.Modal(document.getElementById("exampleModal"));
+
+        document.getElementById("userInfoForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            const name = document.getElementById("nameInput").value;
+            const password = document.getElementById("passInput").value;
+
+            createCard(name, password);
+            document.getElementById("userInfoForm").reset();
+            modal.hide();
+        });
+
+        document.getElementById("exampleModal").addEventListener("hidden.bs.modal", function() {
+            document.getElementById("userInfoForm").reset();
+        });
+    </script>
+</body>
+</html>
